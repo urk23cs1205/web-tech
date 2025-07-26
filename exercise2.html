@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Donation Camp Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #c0392b;
+    }
+    form {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .form-actions {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Blood Donation Camp Registration</h1>
+
+  <!-- Blood Donation Registration Form -->
+  <form action="/serverlogic" method="post" enctype="multipart/form-data" autocomplete="on">
+    
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus maxlength="100">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required max="2007-12-31">
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required min="18" max="65">
+
+      <label for="website">Personal Website (if any)</label>
+      <input type="url" id="website" name="website" placeholder="https://example.com">
+
+      <label for="search">Search your Blood Group Info</label>
+      <input type="search" id="search" name="search" placeholder="Search..." required>
+
+      <label for="photo">Upload Your Photo</label>
+      <input type="file" id="photo" name="photo" required accept="image/*">
+    </fieldset>
+
+    <fieldset>
+      <legend>Blood Donation Details</legend>
+
+      <label>Gender</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female" required> Female</label>
+      </div>
+
+      <label>Available Days</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="day_mon" value="Monday"> Monday</label>
+        <label><input type="checkbox" name="day_wed" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" name="day_fri" value="Friday"> Friday</label>
+        <label><input type="checkbox" name="day_sun" value="Sunday"> Sunday</label>
+      </div>
+
+      <label for="bloodgroup">Select Blood Group</label>
+      <select id="bloodgroup" name="bloodgroup" required>
+        <option value="">--Select--</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+
+      <label for="comments">Health Comments</label>
+      <textarea id="comments" name="comments" placeholder="Mention any relevant health conditions" required maxlength="300"></textarea>
+
+      <label for="progress">Form Completion Progress</label>
+      <progress id="progress" value="90" max="100">90%</progress>
+    </fieldset>
+
+    <div class="form-actions">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+
+  </form>
+
+</body>
+</html>
